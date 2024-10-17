@@ -36,6 +36,13 @@ const SideBar = ({
           </li>
         ))}
       </ul>
+
+      <footer className="absolute mt-[100%] bottom-0 bg-stone-600 py-3 rounded-md pl-3 hover:bg-stone-700">
+        Developed by :{" "}
+        <a href="https://github.com/saka015">
+          <span className="hover:underline">saka015</span> 🚀
+        </a>
+      </footer>
     </aside>
   );
 };

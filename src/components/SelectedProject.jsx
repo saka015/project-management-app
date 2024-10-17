@@ -10,11 +10,15 @@ export default function SelectedProject({
 }) {
   if (!project) return <p>No project selected</p>;
 
-  const formattedDate = new Date(project.date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
+const formattedDate =
+  project.dueDate instanceof Date
+    ? project.dueDate.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })
+    : "Invalid Date";
+
 
   return (
     <div className="w-[35rem] mt-16">

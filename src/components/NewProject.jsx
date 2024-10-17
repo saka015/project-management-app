@@ -13,12 +13,12 @@ function NewProject({ onAdd, onCancel }) {
   function handleSave() {
     const enteredTitle = titleRef.current.value;
     const enteredDescription = descriptionRef.current.value;
-    const enteredDueDate = dueDateRef.current.value;
+    const enteredDueDate = new Date(dueDateRef.current.value);
 
     if (
       enteredTitle.trim() === "" ||
       enteredDescription.trim() === "" ||
-      enteredDueDate.trim() === ""
+      isNaN(enteredDueDate.getTime())
     ) {
       // show an error message
       modal.current.open();
